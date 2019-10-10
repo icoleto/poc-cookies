@@ -1,0 +1,27 @@
+<html>
+<title>Poc for setting cookies</title>
+
+<head></head>
+
+<body>
+  <div>
+    <p id="value">Default text</p>
+    <button onclick="changeIt()">change it!</button>
+  </div>
+</body>
+
+<script>
+let counter = 0
+  function changeIt() {
+    const value = document.getElementById('value')
+    fetch('http://localhost:3000/cookies', { credentials: 'include'})
+  .then(response => response.text())
+  .then(value =>{ document.getElementById('value').innerHTML = value
+   console.log(value)})
+  }
+
+
+
+</script>
+
+</html>
